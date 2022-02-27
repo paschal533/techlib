@@ -50,6 +50,8 @@ const Pin = ({ pin }) => {
     }
   };
 
+  const slicedName = `${postedBy?.userName.slice(0, 30)}...`;
+
   return (
     <div className="m-2">
       <div
@@ -105,7 +107,7 @@ const Pin = ({ pin }) => {
           src={postedBy?.image}
           alt="user-profile"
         />
-        <p className="font-semibold capitalize">{postedBy?.userName}</p>
+        <p className="font-normal text-sm capitalize">{postedBy?.userName.length > '30' ? slicedName : postedBy?.userName}</p>
       </Link>
     </div>
   );
